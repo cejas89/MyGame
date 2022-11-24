@@ -1,27 +1,28 @@
-import { StyleSheet, Text, TextInput, View } from 'react-native'
-import React from 'react'
+import { StyleSheet, Text, TextInput, View, TouchableWithoutFeedback, Keyboard } from 'react-native'
+import React, { useState } from 'react'
 
-const Input = () => {
+export default function Input({ style, ...restProps }) {
+
+
   return (
-    <TextInput
-    blurOnSubmit
-    autoCapitalization="none"
-    autoCorrect={false}
-    keyboardType="numeric"
-    maxLength={2}
-    styles={{ ...styles.input, ...styles }}
-    
-  />
+<TextInput
+      blurOnSubmit
+      autoCapitalization="none"
+      autoCorrect={false}
+      keyboardType="numeric"
+      maxLength={2}
+      style={{ ...styles.input, ...style }}
+      {...restProps}
+    />
   )
 }
 
-export default Input
 
 const styles = StyleSheet.create({
-    input: {
-        height: 30,
-        borderBottomColor: 'black',
-        borderBottomWidth: 1,
-        marginVertical: 10
-    }
+  input: {
+    height: 30,
+    borderBottomColor: 'black',
+    borderBottomWidth: 1,
+    marginVertical: 10
+  }
 })
